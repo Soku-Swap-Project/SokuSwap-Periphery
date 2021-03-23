@@ -5,17 +5,17 @@ import '@uniswap/lib/contracts/libraries/Babylonian.sol';
 import '@uniswap/lib/contracts/libraries/TransferHelper.sol';
 
 import '../interfaces/IERC20.sol';
-import '../interfaces/IApeRouter01.sol';
+import '../interfaces/ISukoRouter01.sol';
 import '../libraries/SafeMath.sol';
-import '../libraries/ApeLibrary.sol';
+import '../libraries/SukoLibrary.sol';
 
 contract ExampleSwapToPrice {
     using SafeMath for uint256;
 
-    IApeRouter01 public immutable router;
+    ISukoRouter01 public immutable router;
     address public immutable factory;
 
-    constructor(address factory_, IApeRouter01 router_) public {
+    constructor(address factory_, ISukoRouter01 router_) public {
         factory = factory_;
         router = router_;
     }
@@ -62,7 +62,7 @@ contract ExampleSwapToPrice {
         bool aToB;
         uint256 amountIn;
         {
-            (uint256 reserveA, uint256 reserveB) = ApeLibrary.getReserves(factory, tokenA, tokenB);
+            (uint256 reserveA, uint256 reserveB) = SukoLibrary.getReserves(factory, tokenA, tokenB);
             (aToB, amountIn) = computeProfitMaximizingTrade(
                 truePriceTokenA, truePriceTokenB,
                 reserveA, reserveB
@@ -84,7 +84,7 @@ contract ExampleSwapToPrice {
         path[0] = tokenIn;
         path[1] = tokenOut;
 
-        router.swapExactTokensForTokens(
+        router.swSukoxactTokensForTokens(
             amountIn,
             0, // amountOutMin: we can skip computing this number because the math is tested
             path,
