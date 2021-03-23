@@ -1,55 +1,26 @@
 {
-  "name": "ApeSwap-AMM-Periphery",
+  "name": "SukoSwap-AMM-Periphery",
   "version": "1.1.0-beta.0",
-  "description": "🎚 Router smart contracts for interacting with ApeSwap",
-  "engines": {
-    "node": ">=10"
+  "description": " Router smart contracts for interacting with SukoSwap",
+  "directories": {
+    "test": "test",
+    "migrate": "rm -rf build && truffle migrate",
+    "verify": "truffle run verify FatToken"
   },
-  "homepage": "https://apeswap.finance",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ApeSwapFinance/apeswap-swap-periphery"
-  },
-  "scripts": {
-    "lint": "yarn prettier ./test/*.ts --check",
-    "lint:fix": "yarn prettier ./test/*.ts --write",
-    "clean": "rimraf ./build/",
-    "precompile": "yarn clean",
-    "compile": "waffle .waffle.json",
-    "compile:truffle": "truffle compile",
-    "migrate:testnet": "truffle migrate --network testnet",
-    "migrate:dev": "truffle migrate --network development",
-    "flatten": "truffle-flattener ./contracts/ApeRouter.sol --output ./ApeRouter_flat.sol",
-    "pretest": "yarn compile",
-    "test": "mocha",
-    "prepublishOnly": "yarn test"
-  },
-  "files": [
-    "build",
-    "contracts"
-  ],
-  "dependencies": {
-    "@ethersproject/solidity": "^5.0.9",
-    "@uniswap/lib": "1.1.1",
-    "@uniswap/v2-core": "^1.0.1",
-    "truffle": "^5.1.65",
-    "truffle-flattener": "^1.5.0",
-    "truffle-hdwallet-provider": "^1.0.17",
-    "truffle-plugin-verify": "^0.4.0"
-  },
+  "license": "ISC",
   "devDependencies": {
-    "@types/chai": "^4.2.6",
-    "@types/mocha": "^5.2.7",
-    "chai": "^4.2.0",
-    "ethereum-waffle": "^2.4.1",
-    "ethereumjs-util": "^6.2.0",
-    "mocha": "^6.2.2",
-    "ncp": "^2.0.0",
-    "prettier": "^1.19.1",
-    "rimraf": "^3.0.0",
-    "solc": "0.6.6",
-    "ts-node": "^8.5.4",
-    "typescript": "^3.7.3"
+    "@openzeppelin/test-helpers": "^0.5.9",
+    "@truffle/hdwallet-provider": "^1.2.0",
+    "dotenv": "^8.2.0",
+    "ganache-cli": "^6.12.1",
+    "truffle": "^5.2.3",
+    "truffle-plugin-verify": "^0.5.5"
   },
-  "license": "GPL-3.0-or-later"
+  
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.2.0",
+    "eth-json-rpc-filters": "^4.2.2",
+    "mocha": "^8.2.1",
+    "mockjs": "^1.1.0"
+  }
 }
