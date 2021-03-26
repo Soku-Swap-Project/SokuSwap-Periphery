@@ -10,15 +10,16 @@
   "license": "ISC",
   "devDependencies": {
     "@openzeppelin/test-helpers": "^0.5.9",
-    "@truffle/hdwallet-provider": "^1.2.0",
+    "@truffle/hdwallet-provider": "^1.2.2",
     "dotenv": "^8.2.0",
     "ganache-cli": "^6.12.1",
-    "truffle": "^5.2.3",
+    "truffle": "^5.1.65",
     "truffle-plugin-verify": "^0.5.5"
   },
-  
   "dependencies": {
     "@openzeppelin/contracts": "^3.2.0",
+    "@uniswap/lib": "*",
+    "@uniswap/v2-core": "^1.0.1",
     "eth-json-rpc-filters": "^4.2.2",
     "mocha": "^8.2.1",
     "mockjs": "^1.1.0"

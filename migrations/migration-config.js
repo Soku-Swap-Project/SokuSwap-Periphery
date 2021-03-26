@@ -1,6 +1,6 @@
 const config = {
     'testnet': {
-        factoryAddress: '0xe72d4deed1ef4b01fb0671fa1dae71d0b2979763',
+        factoryAddress: '0x81F376Ce20B6791Bc725c8C930C62A5F53614c27',
         WBNBAddress: '0xae13d989dac2f0debff460ac112a837c89baa7cd'
     },
     'development': {

@@ -1,6 +1,7 @@
+// SPDX-License-Identifier: MIT
 pragma solidity >=0.6.6;
 
-interface ISukoPair {
+interface ISokuPair {
     event Approval(address indexed owner, address indexed spender, uint value);
     event Transfer(address indexed from, address indexed to, uint value);
 
